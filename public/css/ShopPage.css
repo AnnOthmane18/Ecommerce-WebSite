@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* Blue Light Glasses & KIDS */
+*{
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.shop-products{
+    display: grid;
+    /* background-color:green; */
+    /* grid-auto-flow: column; */
+    grid-template-columns: repeat(auto-fit,minmax(310px,1fr));
+    gap: 7px;
+    width: 85%;
+    align-items:center;
+    margin: 10px auto;
+    /* grid-auto-flow: column; */
+}
+/* FILTER */
+.filter{
+    /* background-color:red; */
+    margin: 0 auto;
+    height: 100px;
+    width: 50%;
+    text-align: center
+}
+.filter-btns{
+    display: flex;
+    justify-content:space-around;
+    align-items:center;
+}
+.shop-product-1 p{
+    font-weight: bold;
+    font-size: 20px;
+}
+.coupon-code{
+    margin-top: 0px !important;
+}
+
+.shop-products a{
+    text-decoration: none;
+    color: black;
+}
+.shop-products a:hover{
+    color: black;
+    text-decoration: none;
+}
+.shop-product-1{
+    width: 340px;
+    border:none;
+    border-radius:10px;
+    height:550px;
+    margin-top:25px;
+    text-align: center;
+}
+.shop-product-1 img{
+    width: 100%;
+}
+
+.shop-product-buttons{
+    padding:5px 20px;
+    
+    height:100px;
+    display:none;
+}
+.shop-product-buttons button{
+    padding:8px 20px;
+    font-weight: bold;
+}
+.shop-addToCart{
+    background-color: black;
+    color:white;
+    border-radius:3px;
+    border: none;
+    cursor: pointer;
+}
+.shop-addToCart:hover{
+    background-color:transparent;
+    border: black solid 1px;
+    color: black;
+}
+
+.shop-BuyNow{
+    background-color:transparent;
+    border: black solid 1px;
+    color: black;
+    border-radius:3px;
+    cursor: pointer;
+}
+
+.img-model{
+    display: none;
+}
+.shop-product-1:hover {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    scale: 1.1;
+    transition: all 0.2s;
+    
+}
+.shop-product-1:hover .shop-product-buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.blue-light-header{
+    /* background-color: yellow; */
+    margin: 60px auto;
+    width: 50%;
+    height: 150px;
+    text-align: center;
+    /* vertical-align: middle; */
+}
+.blue-light-header h1{
+    font-weight: 900;
+}
+.blue-light-header p{
+    width: 80%;
+    margin: 20px auto;
+}
+/* KIDS HEADER */
+
+.kids-header{
+    /* background-color: yellow; */
+    margin: 60px auto;
+    width: 50%;
+    height: 150px;
+    text-align: center;
+    /* vertical-align: middle; */
+}
+.kids-header h1{
+    font-weight: 900;
+}
+.kids-header p{
+    width: 80%;
+    margin: 20px auto;
+}
+
