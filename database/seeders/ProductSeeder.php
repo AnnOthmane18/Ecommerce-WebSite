@@ -28,6 +28,8 @@ class ProductSeeder extends Seeder
                 'shipping_cost' => 19,
                 'sex'=>'both',
                 'age'=>'adults',
+                'color'=>'black',
+                'material'=>'plastic',
                 'image_path' => 'imgs/black/black_main.webp',
                 'product_image' => 'imgs/black/black_product.jpg',
                 'side_image' => 'imgs/black/black_side.webp',
@@ -44,6 +46,8 @@ class ProductSeeder extends Seeder
                 protect your eyes from Blue Light of digital devices. 
                 It will provide you with better sleep and a healthier life. ',
                 'brand' => 'Barner',
+                'color'=>'blue',
+                'material'=>'plastic',
                 'price' => 59,
                 'shipping_cost' => 19,
                 'image_path' => 'imgs/blue/blue_main.webp',
@@ -62,6 +66,8 @@ class ProductSeeder extends Seeder
                 protect your eyes from Blue Light of digital devices. 
                 It will provide you with better sleep and a healthier life. ',
                 'brand' => 'Barner',
+                'color'=>'blue',
+                'material'=>'plastic',
                 'price' => 79,
                 'shipping_cost' => 19,
                 'image_path' => 'imgs/BlueHavana/Blue_havana_main .webp',
@@ -80,6 +86,8 @@ class ProductSeeder extends Seeder
                 protect your eyes from Blue Light of digital devices. 
                 It will provide you with better sleep and a healthier life. ',
                 'brand' => 'Barner',
+                'color'=>'blue',
+                'material'=>'plastic',
                 'price' => 39,
                 'shipping_cost' => 19,
                 'image_path' => 'imgs/BlueSteel/Blue_steel_main .webp',
@@ -93,6 +101,8 @@ class ProductSeeder extends Seeder
                 'details' => 'Le marais ',
                 'sex'=>'both',
                 'age'=>'adults',
+                'color'=>'blue',
+                'material'=>'plastic',
                 'description' => '
                 High quality and stylish computer glasses to 
                 protect your eyes from Blue Light of digital devices. 
@@ -111,6 +121,8 @@ class ProductSeeder extends Seeder
                 'details' => 'Le marais ',
                 'sex'=>'both',
                 'age'=>'adults',
+                'color'=>'blue',
+                'material'=>'plastic',
                 'description' => '
                 High quality and stylish computer glasses to 
                 protect your eyes from Blue Light of digital devices. 
@@ -133,6 +145,8 @@ class ProductSeeder extends Seeder
                 It will provide you with better sleep and a healthier life. ',
                 'brand' => 'Barner',
                 'sex'=>'both',
+                'color'=>'red',
+                'material'=>'metal',
                 'age'=>'adults',
                 'price' => 59,
                 'shipping_cost' => 19,
@@ -147,6 +161,8 @@ class ProductSeeder extends Seeder
                 'details' => 'Le marais ',
                 'sex'=>'both',
                 'age'=>'adults',
+                'color'=>'white',
+                'material'=>'plastic',
                 'description' => '
                 High quality and stylish computer glasses to 
                 protect your eyes from Blue Light of digital devices. 
@@ -165,6 +181,8 @@ class ProductSeeder extends Seeder
                 'details' => 'Crystal Brown ',
                 'sex'=>'both',
                 'age'=>'adults',
+                'color'=>'brown',
+                'material'=>'plastic',
                 'description' => '
                 High quality and stylish computer glasses to 
                 protect your eyes from Blue Light of digital devices. 
@@ -183,6 +201,8 @@ class ProductSeeder extends Seeder
                 'details' => 'Le marais ',
                 'sex'=>'both',
                 'age'=>'adults',
+                'color'=>'blue',
+                'material'=>'plastic',
                 'description' => '
                 High quality and stylish computer glasses to 
                 protect your eyes from Blue Light of digital devices. 
@@ -200,6 +220,8 @@ class ProductSeeder extends Seeder
                 'name' => 'Dark Green',
                 'details' => 'Le marais ',
                 'sex'=>'both',
+                'color'=>'green',
+                'material'=>'plastic',
                 'age'=>'adults',
                 'description' => '
                 High quality and stylish computer glasses to 
@@ -217,6 +239,8 @@ class ProductSeeder extends Seeder
             [
                 'name' => 'Honey',
                 'details' => 'Honey',
+                'color'=>'yellow',
+                'material'=>'plastic',
                 'description' => '
                 High quality and stylish computer glasses to 
                 protect your eyes from Blue Light of digital devices. 
@@ -235,6 +259,8 @@ class ProductSeeder extends Seeder
             [
                 'name' => 'Kids Black',
                 'details' => 'black',
+                'color'=>'black',
+                'material'=>'plastic',
                 'description' => '
                 High quality and stylish computer glasses to 
                 protect your eyes from Blue Light of digital devices. 
@@ -261,6 +287,8 @@ class ProductSeeder extends Seeder
                 'price' => 59,
                 'shipping_cost' => 19,
                 'sex'=>'both',
+                'color'=>'red',
+                'material'=>'plastic',
                 'age'=>'kids',
                 'image_path' => 'imgs/kids_red/red_main.jpg',
                 'product_image' => 'imgs/kids_red/red_product.webp',
@@ -278,6 +306,8 @@ class ProductSeeder extends Seeder
                 'brand' => 'Barner',
                 'price' => 59,
                 'shipping_cost' => 19,
+                'color'=>'blue',
+                'material'=>'plastic',
                 'sex'=>'both',
                 'age'=>'kids',
                 'image_path' => 'imgs/kids_palace_blue/Palace_blue_main .webp',
@@ -297,6 +327,8 @@ class ProductSeeder extends Seeder
                 'price' => 59,
                 'shipping_cost' => 19,
                 'sex'=>'both',
+                'color'=>'brown',
+                'material'=>'plastic',
                 'age'=>'kids',
                 'image_path' => 'imgs/kids_Tortoise/Tortoise_main.webp',
                 'product_image' => 'imgs/kids_Tortoise/Tortoise_product.webp',
