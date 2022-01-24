@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\cartController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +38,7 @@ Route::get('/delete-from-cart/{id}',[cartController::class,'delete'])->name('del
 //Route::get('/user', 'UserController@index');
 Route::get('/pages',[PagesController::class,'about']);
 
+//Dashboard
+
+Route::get('/dashboard',[DashboardController::class,'dashboard']);
+Route::get('/sidebar',[DashboardController::class,'sidebar']);

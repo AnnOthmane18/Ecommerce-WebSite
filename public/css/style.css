@@ -115,6 +115,7 @@ li{
 .show-cart{
     transform:translateX(0%) !important;    
     transition: all 0.8s ease;
+    /* To understand the world and its differences, a constant state of learning and curiosity is welcome. */
 }
 
 .hide-cart{

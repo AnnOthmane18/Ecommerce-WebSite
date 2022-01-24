@@ -1,7 +1,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap');
-
+*{
+    font-family: Public Sans, sans-serif;
+}
 /* *----------------Section 1----------------------------- */
 
 .story{
@@ -86,10 +88,33 @@
     margin: 10px 0px;
 } */
 .COL-2{
-    background-color:red;
+    /* background-color:red; */
     width:50%;
 }
 
 
-/* --------------Section 2----------------- */
+
+/* --------------Section 3----------------- */
+.OUR-VALUES{
+    background-color:lightcyan;
+    height: 500px;
+    padding:30px 0px;
+    z-index: 5;
+}
+.OUR-VALUES h1{
+    text-align:center;
+    font-weight: bolder;
+    /* margin:35px; */
+}
+.values{
+    /* background-color:yellow; */
+    width:85%;
+    margin: 10px auto;
+    display: flex;
+    justify-content:space-around;
+}
+.values div{
+    width: 20%;
+}
+
 /* --------------Section 2----------------- */

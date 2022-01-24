@@ -38,7 +38,7 @@
             </div>
             <div class="logo">
                 <a href="{{route('home')}}">
-                    <img src="{{ URL::asset('elements/logo.png') }}" alt="">
+                    <img src="{{ URL::asset('imgs/logo.png') }}" alt="">
                 </a>
             </div>
             <div class="Col-2">
