@@ -1,0 +1,38 @@
+
+
+.create-product{
+    height:100vh;
+    padding: 60px;
+    background-color: lightblue;
+}
+
+.product-data{
+    background-color: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius:15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 70%;
+    height: 80%;
+    padding :25px;
+}
+.age-color-material-size{
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    /* background-color:red; */
+    /* gap: px; */
+    /* padding:0px 15px; */
+}
+.color,.material,.ages-radio,.size{
+    width:25%;
+    /* background-color:blue; */
+    gap: 5px;
+}
+
+.size-quantity{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
