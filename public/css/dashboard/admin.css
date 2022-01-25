@@ -104,3 +104,57 @@
     background-color:rgb(240, 237, 243);
     color: var(--primary-color) !important;
 }
+
+/* Dashboard Main */
+.main{
+    width: calc(100% - 350px);
+    margin-left: 350px;
+    background-color:blue;
+}
+        /* ----NAV-BAR--- */
+
+.dashboard-navbar{
+    width: calc(100% - 350px);
+    /* z-index: 0; */
+    background-color:white;
+    height:80px;
+    display:flex;
+    justify-content:space-between;
+    padding:0px 25px;
+    align-items:center;
+    top: 0;
+    position:absolute;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.admin-profile-navbar img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+.admin-navbar{
+    z-index: 6;
+    width: 20%;
+    align-items:center;
+    /* background-color: red; */
+    position:relative;
+    display: flex;
+    justify-content: space-around;
+    gap: 1.5rem;
+}
+
+.search-navbar{
+    width: 20%;
+    /* background-color:yellow; */
+}
+
+/* Main Content */
+
+.main-content{
+    margin-top:25px;
+    width: calc(100% - 350px);
+    height: calc(100% - 80px);
+    position: absolute;
+    top: 80px;
+    overflow: scroll;
+}

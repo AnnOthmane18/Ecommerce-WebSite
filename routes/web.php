@@ -40,5 +40,6 @@ Route::get('/pages',[PagesController::class,'about']);
 
 //Dashboard
 
+Route::get('/admin',[DashboardController::class,'admin']);
 Route::get('/dashboard',[DashboardController::class,'dashboard']);
-Route::get('/sidebar',[DashboardController::class,'sidebar']);
+Route::get('/create-product',[DashboardController::class,'newProduct']);

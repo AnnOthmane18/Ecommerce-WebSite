@@ -1,15 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{asset('css/dashboard/sidebar.css')}}">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
-    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dashboard</title>
-</head>
-<body>
-    @yield('sidebar')
-</body>
-</html>
+@extends('Dashboard.admin')
+
+@section('dashboard')
+<div class="dashboard-cards">
+    <h1>Dashboard</h1>
+    <div class="dashboard">
+        <div class="Sales Card">
+            <div class="total-sales">
+                <h2>Total-sales</h2>
+                <p>$1,253,203</p>
+            </div>
+            <div class="sales-icon">
+                <i class="fas fa-2x fa-dollar-sign"></i>
+            </div>
+        </div>
+        <div class="card-1 Card">
+            <div class="total-sales">
+                <h2>Total-Orders</h2>
+                <p>2 203</p>
+            </div>
+            <div class="sales-icon">
+                <i class="fas fa-dollar-sign"></i>
+            </div>
+        </div>
+        <div class="card-1 Card">
+            <div class="total-sales">
+                <h2>Total-Products</h2>
+                <p>1 203</p>
+            </div>
+            <div class="sales-icon">
+                <i class="fas fa-dollar-sign"></i>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
