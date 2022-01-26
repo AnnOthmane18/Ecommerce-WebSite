@@ -16,18 +16,21 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique()->nullable(false); // NullAble >> required field
-            $table->string('details')->nullable(false);
             $table->text('description')->nullable(false);
-            $table->text('sex');
             $table->text('age');
-            $table->string('brand')->nullable(false);
+            $table->text('details')->nullable(true);
+            $table->text('brand')->nullable(true);
+            $table->text('sex')->nullable(true);
             $table->double('price')->nullable(false);
-            $table->double('shipping_cost');
+            $table->double('regularPrice');
+            $table->text('category');
+            $table->double('quantity');
+            $table->double('shipping_cost')->nullable(true);
             $table->string('image_path')->nullable(false);
             $table->string('product_image');
-            $table->string('side_image');
-            $table->string('man_image');
-            $table->string('women_image');
+            $table->string('side_image')->nullable(true);
+            $table->string('man_image')->nullable(true);
+            $table->string('women_image')->nullable(true);
             $table->timestamps();
         });
     }

@@ -42,4 +42,6 @@ Route::get('/pages',[PagesController::class,'about']);
 
 Route::get('/admin',[DashboardController::class,'admin']);
 Route::get('/dashboard',[DashboardController::class,'dashboard']);
-Route::get('/create-product',[DashboardController::class,'newProduct']);
+Route::view('/create-product','Dashboard.CreateProduct');
+// Route::view('/create-product',[DashboardController::class,'newProduct']);
+Route::post('/create-product',[DashboardController::class,'addProduct']);
