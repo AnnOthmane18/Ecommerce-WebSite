@@ -17,17 +17,17 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name')->unique()->nullable(false); // NullAble >> required field
             $table->text('description')->nullable(false);
-            $table->text('age');
+            $table->string('age');
             $table->text('details')->nullable(true);
-            $table->text('brand')->nullable(true);
-            $table->text('sex')->nullable(true);
+            $table->string('brand')->nullable(true);
+            $table->string('sex')->nullable(true);
             $table->double('price')->nullable(false);
             $table->double('regularPrice');
-            $table->text('category');
+            $table->string('category');
             $table->double('quantity');
             $table->double('shipping_cost')->nullable(true);
             $table->string('image_path')->nullable(false);
-            $table->string('product_image');
+            $table->string('product_image')->nullable(true);
             $table->string('side_image')->nullable(true);
             $table->string('man_image')->nullable(true);
             $table->string('women_image')->nullable(true);

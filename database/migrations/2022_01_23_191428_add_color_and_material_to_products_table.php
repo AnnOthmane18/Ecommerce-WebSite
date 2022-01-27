@@ -15,7 +15,7 @@ class AddColorAndMaterialToProductsTable extends Migration
     {
         Schema::table('products', function (Blueprint $table) {
             $table->string('color')->nullable(false);
-            $table->string('material')->nullable(false);
+            $table->string('material')->nullable(true);
             //
         });
     }

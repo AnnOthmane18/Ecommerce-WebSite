@@ -5,9 +5,10 @@
     <h2>Create a new product</h2>
     <div class="product-data">
 
-        <form action="" method="POST">
+        <form action="create-product" method="POST" enctype="multipart/form-data">
+            @csrf
             <div class="form-floating mb-3">
-                <input type="text" name="productName"class="form-control" id="floatingInput" placeholder="Product name">
+                <input type="text" name="productName" class="form-control" id="floatingInput" placeholder="Product name">
                 <label for="floatingInput">Product Name</label>
             </div>
             <div class="age-color-material-size d-inline-flex">
@@ -27,10 +28,9 @@
                         <option value="purple">purple</option>
                     </select>
                 </div>
-                <div class="material ">
+                <div class="material">
                     <label for="">Material</label>
-                    <select mame="material" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                        {{-- <option selected>Material</option> --}}
+                    <select mame="Material" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
                         <option value="Plastic">Plastic</option>
                         <option value="Metal">Metal</option>
                     </select>
@@ -89,6 +89,35 @@
                 <textarea class="form-control" name="description" placeholder="Description" id="floatingTextarea2" style="height: 100px"></textarea>
                 <label for="floatingTextarea2">Description</label>
             </div>
+            
+            <div class="product-images">
+                <label for="">Images</label>
+                <div class="product-images-content">
+                    <div class="main-product-image">
+                        <label for="">Main Image</label>
+                        <input type="file" name="mainImage" class="form-control" >
+                    </div>
+                    <div class="second-product-images">
+                        <div class="second-image">
+                            <label for="">Product Image</label>
+                            <input type="file" name="productImage" class="form-control" >
+                        </div>
+                        <div class="second-image">
+                            <label for="">Side Image</label>
+                            <input type="file" name="sideImage" class="form-control" >
+                        </div>
+                        <div class="second-image">
+                            <label for="">Women Image</label>
+                            <input type="file" name="womanImage" class="form-control" >
+                        </div>
+                        <div class="second-image">
+                            <label for="">Man Image</label>
+                            <input type="file" name="manImage" class="form-control" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--
             <div class="product-images">
                 <label for="">Images</label>
                 <div class="product-images-content">
@@ -97,8 +126,8 @@
                         <h4 class="dragText">Drop your file here</h4>
                         {{-- <h5>OR</h5> --}}
                         <p>OR</p>
-                        <button class="Browse-File">Browse File</button>
-                        <input name ="mainImage"type="file" hidden>
+                        {{-- <button class="Browse-File">Browse File</button> --}}
+                        <input name ="mainImage" type="file" >
                     </div>
                     <div class="second-product-images">
                         <div class="second-image"> 
@@ -135,8 +164,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <button type="submit">Create Product</button>
+            </div>-->
+            <button type="submit" >Create Product</button>
         </form>
     </div>
 </div>

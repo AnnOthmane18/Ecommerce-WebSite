@@ -3,8 +3,9 @@ const dropArea = document.querySelector(".main-product-image")
 const second_images = document.querySelector(".second-product-images")
 dropArea_second_images = second_images.children
 
-dragText = dropArea.querySelector("dragText")
-button = dropArea.querySelector("button")
+dragText = dropArea.querySelector(".dragText")
+button = document.querySelector(".Browse-File")
+// button = dropArea.querySelector("button")
 input = dropArea.querySelector("input")
 let file; //this is a global variable and we'll use it inside multiple functions
 let Files = [];
@@ -53,9 +54,9 @@ input.addEventListener("change", function(){
   //getting user select file and [0] this means if user select multiple files then we'll select only the first one
   file = this.files[0];
   dropArea.classList.add("active");
+  console.log(file.mozFullPath);
   showFile(); //calling function
 });
-
 
 //If user Drag File Over DropArea
 dropArea.addEventListener("dragover", (event)=>{
@@ -86,6 +87,7 @@ function showFile(){
     fileReader.onload = ()=>{
       let fileURL = fileReader.result; //passing user file source in fileURL variable
         // UNCOMMENT THIS BELOW LINE. I GOT AN ERROR WHILE UPLOADING THIS POST SO I COMMENTED IT
+        // console.log(fileURL);
       let imgTag = `<img src="${fileURL}" alt="image">`; //creating an img tag and passing user selected file source inside src attribute
       dropArea.innerHTML = imgTag; //adding that created img tag inside dropArea container
     }
