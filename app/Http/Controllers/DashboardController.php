@@ -5,20 +5,36 @@ namespace App\Http\Controllers;
 use File;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
-    public function admin(){
-        return view('Dashboard.admin');
+    public function __construct(){
+        $this->middleware('auth');
     }
 
+ 
+
     public function dashboard(){
-        return view('Dashboard.dashboard');
+        $nbr_Products = DB::table('products')->count();        
+        return view('Dashboard.dashboard',[
+            'nbr_Products' => $nbr_Products
+            ]);
     }
+
     public function newProduct(){
         return view('Dashboard.CreateProduct');
     }
+
+
     public function addProduct(Request $req){
+
+        $validateData = $req->validate([
+            'productName'=>'required|min:4|max:100',
+            'description' =>'required|min:4',
+            'salesPrice' =>'required'
+        ]);
+
         $product = new Product;
         $product->name = $req->productName;
         $product->description = $req->description;
@@ -27,23 +43,11 @@ class DashboardController extends Controller
         $product->regularPrice = $req->regularPrice;
         $product->category = $req->category;
         $product->quantity = $req->quantity;
+        $product->size = $req->size;
         
 
-        File::makeDirectory('imgs/'.$product->id);
-       /* if($req->hasFile('mainImage')){
+        if($req->hasFile('mainImage')){
             $file = $req->file('mainImage');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extension;
-            $file->move('/opt/lampp/htdocs/Ecom_prj/public/imgs/',$filename);
-            $product->image_path += 'imgs/'.$filename;
-        }else{
-            $product->image_path = 'image not found';
-        }*/ 
-
-        // $product->image_path =  $req->file('imageTest');
-       
-        if($req->hasFile('imageTest')){
-            $file = $req->file('imageTest');
             $extension = $file->getClientOriginalExtension();
             $filename = time().'.'.$extension;
            
@@ -57,43 +61,40 @@ class DashboardController extends Controller
             $file = $req->file('productImage');
             $extension = $file->getClientOriginalExtension();
             $filename = time().'.'.$extension;
-            $file->move('imgs/',$filename);
-            $product->image_path = 'imgs/'.$filename;
+            $file->move('imgs2/',$filename);
+            $product->product_image = 'imgs2/'.$filename;
         }else{
-            $product->image_path = 'image not found';
+            $product->product_image = 'image not found';
         }
+
         if($req->hasFile('sideImage')){
             $file = $req->file('sideImage');
             $extension = $file->getClientOriginalExtension();
             $filename = time().'.'.$extension;
             $file->move('imgs/',$filename);
-            $product->image_path = 'imgs/'.$filename;
+            $product->side_image = 'imgs/'.$filename;
         }else{
-            $product->image_path = 'image not found';
+            $product->side_image = 'image not found';
         }
-        if($req->hasFile('manImage')){
-            $file = $req->file('manImage');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extension;
-            $file->move('imgs/',$filename);
-            $product->image_path = 'imgs/'.$filename;
-        }else{
-            $product->image_path = 'image not found';
-        }
-        if($req->hasFile('womanImage')){
-            $file = $req->file('womanImage');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extension;
-            $file->move('imgs/',$filename);
-            $product->image_path = 'imgs/'.$filename;
-        }else{
-            $product->image_path = 'image not found';
-        }
+        // if($req->hasFile('manImage')){
+        //     $file = $req->file('manImage');
+        //     $extension = $file->getClientOriginalExtension();
+        //     $filename = time().'.'.$extension;
+        //     $file->move('imgs/',$filename);
+        //     $product->man_image = 'imgs/'.$filename;
+        // }else{
+        //     $product->man_image = 'image not found';
+        // }
+        // if($req->hasFile('womanImage')){
+        //     $file = $req->file('womanImage');
+        //     $extension = $file->getClientOriginalExtension();
+        //     $filename = time().'.'.$extension;
+        //     $file->move('imgs/',$filename);
+        //     $product->women_image = 'imgs/'.$filename;
+        // }else{
+        //     $product->women_image = 'image not found';
+        // }
         // $product->image_path = $req->mainImage;
-        $product->product_image = $req->productImage;
-        $product->side_image = $req->sideImage;
-        $product->man_image = $req->manImage;
-        $product->women_image = $req->womenImage;
         $product->color = $req->color;
         $product->material = $req->Material;
             // material
@@ -101,4 +102,19 @@ class DashboardController extends Controller
         // return $req->file('imageTest')->store('IMGS');
         return redirect('create-product');
     }
+
+    public function listProducts(){
+        // $products = DB::table('products')->paginate(7);
+        $products = Product::paginate(2);
+        return view('Dashboard.listProducts',['products' => $products]);
+    }
+
+    public function Delete($id){
+        $product = Product::findorfail($id);
+        if($product){
+            $product->delete();
+        }
+        return redirect('list-products');
+    }
+
 }

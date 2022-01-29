@@ -1,0 +1,15 @@
+
+
+.card-header{
+    height: 80px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: red; */
+}
+
+
+.navbar-brand img{
+    width:150px;
+}

@@ -8,7 +8,7 @@
         <form action="create-product" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-floating mb-3">
-                <input type="text" name="productName" class="form-control" id="floatingInput" placeholder="Product name">
+                <input type="text" name="productName" value="{{old('productName')}}" class="form-control" id="floatingInput" placeholder="Product name">
                 <label for="floatingInput">Product Name</label>
             </div>
             <div class="age-color-material-size d-inline-flex">
@@ -61,11 +61,11 @@
                 <div class="price">
                     <label for="">Price</label>
                     <div class="form-floating mb-3">
-                        <input type="text" name = "regularPrice"class="form-control" id="floatingInput" placeholder="regular price">
+                        <input type="text" name="regularPrice" value="{{old('regularPrice')}}" class="form-control" id="floatingInput" placeholder="regular price">
                         <label for="floatingInput">Regular Price</label>
                     </div>
                     <div class="form-floating">
-                        <input type="text" name="salesPrice"class="form-control" id="floatingPassword" placeholder="sales price">
+                        <input type="text" name="salesPrice" value="{{ old('salesPrice') }}" class="form-control" id="floatingPassword" placeholder="sales price">
                         <label for="floatingPassword">Sales Price</label>
                     </div>
                 </div>

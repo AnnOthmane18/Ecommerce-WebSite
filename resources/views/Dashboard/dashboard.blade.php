@@ -25,7 +25,7 @@
         <div class="card-1 Card">
             <div class="total-sales">
                 <h2>Total-Products</h2>
-                <p>1 203</p>
+                <p>{{$nbr_Products}}</p>
             </div>
             <div class="sales-icon">
                 <i class="fas fa-dollar-sign"></i>

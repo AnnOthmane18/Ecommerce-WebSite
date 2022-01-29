@@ -40,8 +40,15 @@ Route::get('/pages',[PagesController::class,'about']);
 
 //Dashboard
 
-Route::get('/admin',[DashboardController::class,'admin']);
-Route::get('/dashboard',[DashboardController::class,'dashboard']);
-Route::view('/create-product','Dashboard.CreateProduct');
-// Route::view('/create-product',[DashboardController::class,'newProduct']);
+// Route::get('/admin',[DashboardController::class,'admin']);
+Route::get('/dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
+// Route::view('/create-product','Dashboard.CreateProduct')->name('create-product');
 Route::post('/create-product',[DashboardController::class,'addProduct']);
+
+Route::get('/create-product',[DashboardController::class,'newProduct'])->name('create-product');
+Route::get('/list-products',[DashboardController::class,'listProducts'])->name('list-products');
+Route::get('/delete-from-list/{id}',[DashboardController::class,'Delete'])->name('delete.from.list');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

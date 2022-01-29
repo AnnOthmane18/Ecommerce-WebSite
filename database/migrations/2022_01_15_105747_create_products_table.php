@@ -24,6 +24,7 @@ class CreateProductsTable extends Migration
             $table->double('price')->nullable(false);
             $table->double('regularPrice');
             $table->string('category');
+            $table->string('size');
             $table->double('quantity');
             $table->double('shipping_cost')->nullable(true);
             $table->string('image_path')->nullable(false);
