@@ -26,10 +26,10 @@
             <div class="Col-1">
                 <ul class="nav-grp-links">
                     <li>
-                        <a class = "nav-links" href="{{route('shop')}}">Blue Light Glasses</a>
+                        <a class = "nav-links" href="{{route('bluelight')}}">Blue Light Glasses</a>
                     </li>
                     <li>
-                        <a class = "nav-links"  href="#">SunGlasses</a>
+                        <a class = "nav-links"  href="{{route('sunglasses')}}">SunGlasses</a>
                     </li>
                     <li>
                         <a class = "nav-links"  href="{{route('kids')}}">Kids</a>
@@ -37,7 +37,7 @@
                 </ul>
             </div>
             <div class="logo">
-                <a href="{{route('home')}}">
+                <a href="{{route('Home')}}">
                     <img src="{{ URL::asset('imgs/logo.png') }}" alt="">
                 </a>
             </div>

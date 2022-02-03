@@ -19,9 +19,9 @@
     /* background-color:yellow; */
     height: 220px;
     width: 95%;
-    margin: 0 auto;
-    
+    margin: 0 auto;    
     padding:10px 15px;
+
 }
 .dashboard-cards h1{
     font-weight: 700;
@@ -39,9 +39,12 @@
     width: 40%;
     border: lightgrey solid 1px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    padding:0px 30px;
+    padding:0px 35px;
     height: 80%;
     align-items:center;
     border-radius:15px;
     background-color:white;
+}
+.Card h2{
+    font-weight: 700;
 }

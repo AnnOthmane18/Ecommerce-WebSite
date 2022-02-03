@@ -49,10 +49,22 @@ class DashboardController extends Controller
         if($req->hasFile('mainImage')){
             $file = $req->file('mainImage');
             $extension = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extension;
-           
-            $file->move('imgs/',$filename);
-            $product->image_path = 'imgs/'.$filename;
+            $filename = $req->productName.'.'.$extension;
+
+            if($req->category == 'Bluelight'){
+                $file->move('imgs/BlueLight/',$filename);
+                $product->image_path = 'imgs/BlueLight/'.$filename;
+            }else if($req->category == 'Eyewear'){
+                $file->move('imgs/Eyewear/',$filename);
+                $product->image_path = 'imgs/Eyewear/'.$filename;
+            }else if($req->category == 'SunGlasses'){
+                $file->move('imgs/SunGlasses/',$filename);
+                $product->image_path = 'imgs/SunGlasses/'.$filename;
+            }else if($req->category == 'Accessories'){
+                $file->move('imgs/Accessories/',$filename);
+                $product->image_path = 'imgs/Accessories/'.$filename;
+            }
+
         }else{
             $product->image_path = 'image not found';
         }
@@ -60,31 +72,53 @@ class DashboardController extends Controller
         if($req->hasFile('productImage')){
             $file = $req->file('productImage');
             $extension = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extension;
-            $file->move('imgs2/',$filename);
-            $product->product_image = 'imgs2/'.$filename;
+            $filename = $req->productName.'.'.$extension;
+            if($req->category == 'Bluelight'){
+                $file->move('imgs/BlueLight/',$filename);
+                $product->product_image = 'imgs/BlueLight/'.$filename;
+            }else if($req->category == 'Eyewear'){
+                $file->move('imgs/Eyewear/',$filename);
+                $product->product_image = 'imgs/Eyewear/'.$filename;
+            }else if($req->category == 'SunGlasses'){
+                $file->move('imgs/SunGlasses/',$filename);
+                $product->product_image = 'imgs/SunGlasses/'.$filename;
+            }else if($req->category == 'Accessories'){
+                $file->move('imgs/Accessories/',$filename);
+                $product->product_image = 'imgs/Accessories/'.$filename;
+            }
         }else{
             $product->product_image = 'image not found';
         }
 
-        if($req->hasFile('sideImage')){
-            $file = $req->file('sideImage');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extension;
-            $file->move('imgs/',$filename);
-            $product->side_image = 'imgs/'.$filename;
-        }else{
-            $product->side_image = 'image not found';
-        }
-        // if($req->hasFile('manImage')){
-        //     $file = $req->file('manImage');
+        // if($req->hasFile('sideImage')){
+        //     $file = $req->file('sideImage');
         //     $extension = $file->getClientOriginalExtension();
         //     $filename = time().'.'.$extension;
         //     $file->move('imgs/',$filename);
-        //     $product->man_image = 'imgs/'.$filename;
+        //     $product->side_image = 'imgs/'.$filename;
         // }else{
-        //     $product->man_image = 'image not found';
+        //     $product->side_image = 'image not found';
         // }
+        if($req->hasFile('manImage')){
+            $file = $req->file('manImage');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extension;
+            if($req->category == 'Bluelight'){
+                $file->move('imgs/BlueLight/',$filename);
+                $product->man_image = 'imgs/BlueLight/'.$filename;
+            }else if($req->category == 'Eyewear'){
+                $file->move('imgs/Eyewear/',$filename);
+                $product->man_image = 'imgs/Eyewear/'.$filename;
+            }else if($req->category == 'SunGlasses'){
+                $file->move('imgs/SunGlasses/',$filename);
+                $product->man_image = 'imgs/SunGlasses/'.$filename;
+            }else if($req->category == 'Accessories'){
+                $file->move('imgs/Accessories/',$filename);
+                $product->man_image = 'imgs/Accessories/'.$filename;
+            }
+        }else{
+            $product->man_image = 'image not found';
+        }
         // if($req->hasFile('womanImage')){
         //     $file = $req->file('womanImage');
         //     $extension = $file->getClientOriginalExtension();
@@ -105,9 +139,14 @@ class DashboardController extends Controller
 
     public function listProducts(){
         // $products = DB::table('products')->paginate(7);
-        $products = Product::paginate(2);
+        $products = Product::paginate(7);
         return view('Dashboard.listProducts',['products' => $products]);
     }
+    
+    public function search($name){
+        $products = DB::table('products')->where('name', $name)->get();
+        return view('Dashboard.listProducts',['products' => $products]);
+        }
 
     public function Delete($id){
         $product = Product::findorfail($id);

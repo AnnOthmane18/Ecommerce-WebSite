@@ -15,7 +15,80 @@
     <title>Dashboard</title>
 </head>
 <body>
-    <div class="sidebar">
+
+
+
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class=" col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+            <div class="sidebar d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <div class="sidebar-header">
+                    <a href="/" class=" pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                        <span class="sidebar-logo">Barner</span>
+                    </a>
+                    <i class="fas fa-angle-double-left"></i>
+                </div>
+                <div class="sidebar-line"></div>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li>
+                        <a href="{{route('dashboard')}}" class="nav-link px-0 align-middle">
+                            <i class="fas fa-tachometer-alt"></i> <span class="sidebar-link d-none d-sm-inline">Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <i class="fas fa-store-alt"></i> <span class="sidebar-link  d-none d-sm-inline">E-commerce</span> </a>
+                        <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                            <li class="w-100">
+                                <a href="{{route('create-product')}}" class="nav-link px-0"> 
+                                    <i class="fas fa-tshirt"></i><span class="sidebar-link d-none d-sm-inline">Add product</span> </a>
+                            </li>
+                            <li>
+                                <a href="{{route('list-products')}}" class="nav-link px-0"> 
+                                    <i class="fas fa-list"></i><span class=" sidebar-link d-none d-sm-inline">List products</span> </a>
+                            </li>
+                            <li>
+                                <a href="{{route('list-products')}}" class="nav-link px-0"> 
+                                    <i class="fas fa-list"></i><span class=" sidebar-link d-none d-sm-inline">C products</span> </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link px-0 align-middle">
+                            <i class="fas fa-user"></i><span class="sidebar-link  d-none d-sm-inline">Customers</span> </a>
+                    </li>                    
+                </ul>
+                <hr>
+                <div class="dropdown pb-4">
+                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
+                        <span class="d-none d-sm-inline mx-1">{{ Auth::user()->name }}</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                          document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                             @csrf
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+   <!-- <div class="sidebar">
         <div class="sidebar-header">
             <div class="logo-close">
                 <img src="{{asset('imgs/logo.png')}}" alt="">
@@ -80,7 +153,7 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </div>-->
     {{-- Nav Bar --}}
     <div class="main">
         <div class="dashboard-navbar">
@@ -91,17 +164,7 @@
                 </form>
             </div>
             <div class="admin-navbar">
-                <div class="language">
-                    <div class="dropdown show">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Language
-                        </a>            
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                          <a class="dropdown-item" href="#">English</a>
-                          <a class="dropdown-item" href="#">French</a>
-                        </div>
-                      </div>
-                </div>
+                
                 {{-- <div class="admin-profile-navbar">
                     <img src="{{asset('imgs/admin-pic.png')}}" alt="">
                 </div> --}}

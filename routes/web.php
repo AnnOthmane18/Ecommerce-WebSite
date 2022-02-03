@@ -21,13 +21,14 @@ use App\Http\Controllers\DashboardController;
 //     return view('index');
 // });
 
-Route::get('/',[PagesController::class,'index'])->name('home');
+Route::get('/',[PagesController::class,'index'])->name('Home');
 Route::get('/contact',[PagesController::class,'contact'])->name('contact');
 Route::get('/about',[PagesController::class,'about'])->name('about');
 Route::get('/product',[ProductController::class,'index'])->name('product');
 Route::get('/kids',[ProductController::class,'kids'])->name('kids');
 
-Route::get('/shop',[ProductController::class,'shop'])->name('shop');
+Route::get('/blue-light',[ProductController::class,'bluelight'])->name('bluelight');
+Route::get('/sun-glasses',[ProductController::class,'sunglasses'])->name('sunglasses');
 
 Route::get('/shop/{id}',[ProductController::class,'show'])->name('product');
 
@@ -47,6 +48,7 @@ Route::post('/create-product',[DashboardController::class,'addProduct']);
 
 Route::get('/create-product',[DashboardController::class,'newProduct'])->name('create-product');
 Route::get('/list-products',[DashboardController::class,'listProducts'])->name('list-products');
+Route::get('/search/{name}',[DashboardController::class,'search'])->name('search');
 Route::get('/delete-from-list/{id}',[DashboardController::class,'Delete'])->name('delete.from.list');
 
 Auth::routes();

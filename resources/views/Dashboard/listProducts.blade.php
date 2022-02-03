@@ -4,12 +4,14 @@
 
 <div class="products-section">
     <div class="mini-header">
-        <h2>Products list</h2>
+        <h1>Products list</h1>
         <a href="{{route('create-product')}}"><button>+ new product</button></a>
     </div>
+    {{-- @foreach($products as $product) --}}
+
     <div class="products-list">
-        <form class="search-products form-inline my-2 my-lg-2">
-            <input class="form-control " type="search" placeholder="Search" aria-label="Search">
+        <form class="search-products form-inline my-2 my-lg-2" action="{{route('search',$product->name)}}">
+            <input class="form-control " name ="products-search" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
         

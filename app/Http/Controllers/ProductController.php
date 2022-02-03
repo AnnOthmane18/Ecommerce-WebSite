@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -11,11 +12,21 @@ class ProductController extends Controller
         return view('pages.productPage');
     }
 
-    public function shop(){
-        $products = Product::all();
+    public function bluelight(){
+        // $products = Product::where('category','=','Bluelight');
+        $products = DB::table('products')->where('category', '=', 'Bluelight')->get();
         // dd($products);
         // return view('pages.shop',compact('products'));
-        return view('pages.shop',['products'=>$products]);
+        return view('pages.Bluelight',['products'=>$products]);
+    }
+    
+    public function sunglasses(){
+        // $products = Product::where('category','=','SunGlasses');
+        $products = DB::table('products')->where('category', '=', 'SunGlasses')->get();
+
+        // dd($products);
+        // return view('pages.shop',compact('products'));
+        return view('pages.Sunglasses',['products'=>$products]);
     }
 
     public function show($id){

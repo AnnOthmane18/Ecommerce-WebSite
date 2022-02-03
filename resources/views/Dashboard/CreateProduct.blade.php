@@ -2,7 +2,7 @@
 
 @section('NewProduct')
 <div class="create-product">
-    <h2>Create a new product</h2>
+    <h1>Create new product</h1>
     <div class="product-data">
 
         <form action="create-product" method="POST" enctype="multipart/form-data">
@@ -76,6 +76,7 @@
                         <option value="Eyewear">Eyewear Glasses</option>
                         <option value="Bluelight">Bluelight Glasses</option>
                         <option value="SunGlasses">SunGlasses</option>
+                        <option value="Accessories">Accessories</option>
                     </select>
                 </div>    
                 <div class="quantity ">
@@ -165,7 +166,7 @@
                     </div>
                 </div>
             </div>-->
-            <button type="submit" >Create Product</button>
+            <button type="submit" class="create">Create</button>
         </form>
     </div>
 </div>

@@ -15,59 +15,42 @@
     /* background-color:var(--secondary-color); */
 }
 
-.sidebar{
-    color: var(--secondary-color);
-    background-color: var(--primary-color);
-    width: 350px;
-    height:100vh;
-    top: 0;
-    left: 0;
-    padding:10px;
-}
-.logo-close{
-    display: flex;
-    justify-content: space-between;
-    align-items:center;
-}
-.logo-close img{
-    width: 150px;
-}
 
-
-.admin-profile img{
-    width: 50px;
-    height: 50px;
-    border-radius:100%;
-}
-.admin-profile{
-    display: flex;
-    justify-content:space-around;
-
-    width:70%;
-    align-items: center;
-    height:50%;
-    margin: 0 auto;
-    border-radius:10px;
-    /* background-color:var(--third-color); */
-}
 
 .sidebar-header{
-    display: flex;
-    padding:0px 20px;
-    flex-direction: column;
-    justify-content: space-around;
-    /* background-color:whitesmoke; */
-    height: 160px;
+    width: 100%;
+    align-items:center;
+    display:flex;
+    justify-content:space-between;
+    margin: 10px auto;
+    font-size: 25px;
 }
-
-.sidebar i{
-    color: var(--secondary-color);
-
+.sidebar-line{
+    width: 100%;
+    background-color:white;
+    height: 2px;
+}
+.sidebar-logo {
+    font-weight: 700;
+    font-size: 30px;
+    /* background-color:green; */
+}
+.sidebar ul{
+    /* background-color:yellow; */
+    margin-top:25px;
+    width: 100%;
+}
+.sidebar ul a{
+    color: white;
+    font-weight: 500;
+    font-size: 17px;
 }
 .sidebar-link{
-    display: flex;
-    gap: 5px;
+    margin-left: 15px;
 }
+
+
+
 
 /* Side Bar Content */
 
@@ -107,14 +90,14 @@
 
 /* Dashboard Main */
 .main{
-    width: calc(100% - 350px);
-    margin-left: 350px;
+    width: calc(100% - 306px);
+    margin-left: 306px;
     background-color:blue;
 }
         /* ----NAV-BAR--- */
 
 .dashboard-navbar{
-    width: calc(100% - 350px);
+    width: calc(100% - 306px);
     /* z-index: 0; */
     background-color:white;
     height:80px;
@@ -152,7 +135,7 @@
 
 .main-content{
     margin-top:25px;
-    width: calc(100% - 350px);
+    width: calc(100% - 306px);
     height: calc(100% - 80px);
     position: absolute;
     top: 80px;
