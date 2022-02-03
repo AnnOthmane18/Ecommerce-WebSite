@@ -114,7 +114,7 @@
     /* vertical-align: middle; */
 }
 .blue-light-header h1{
-    font-weight: 900;
+    font-weight: 700;
 }
 .blue-light-header p{
     width: 80%;
@@ -138,3 +138,20 @@
     margin: 20px auto;
 }
 
+@media only screen and (max-width: 600px) {
+    .blue-light-header{
+        width: 90%;
+        margin: 30px auto;
+
+    }
+    .blue-light-header p{
+        width: 100%;
+    }
+    .filter{
+        width: 80%;
+        padding-top: 20px;
+    }
+    .filter-btns{
+        align-items:center;
+    }
+}

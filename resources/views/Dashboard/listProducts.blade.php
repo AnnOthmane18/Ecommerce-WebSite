@@ -10,8 +10,8 @@
     {{-- @foreach($products as $product) --}}
 
     <div class="products-list">
-        <form class="search-products form-inline my-2 my-lg-2" action="{{route('search',$product->name)}}">
-            <input class="form-control " name ="products-search" type="search" placeholder="Search" aria-label="Search">
+        <form class="search-products form-inline my-2 my-lg-2" action="{{route('list-products')}}">
+            <input class="form-control " name ="products-search" type="search" value ="{{request()->query('products-search')}}"placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
         
@@ -35,7 +35,7 @@
                 </tr>
             </thead>
             {{-- @if(session('cartItems')) --}}
-                @foreach($products as $product)
+                @forelse($products as $product)
                 <tbody>
                     <tr class="productX">
                         <td>  
@@ -59,7 +59,9 @@
                         </td>
                     </tr>
             </tbody>
-                @endforeach
+                @empty
+                    <p>there is no product for <strong>{{request()->query('products-search')}}</strong> </p>
+                @endforelse
             {{-- @else
                 <p style="color:red;">Shopping Cart Is Empyty!!</p>
             @endif --}}

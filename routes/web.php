@@ -48,7 +48,7 @@ Route::post('/create-product',[DashboardController::class,'addProduct']);
 
 Route::get('/create-product',[DashboardController::class,'newProduct'])->name('create-product');
 Route::get('/list-products',[DashboardController::class,'listProducts'])->name('list-products');
-Route::get('/search/{name}',[DashboardController::class,'search'])->name('search');
+// Route::get('/search/{name}',[DashboardController::class,'search'])->name('search');
 Route::get('/delete-from-list/{id}',[DashboardController::class,'Delete'])->name('delete.from.list');
 
 Auth::routes();

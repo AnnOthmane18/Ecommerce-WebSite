@@ -2,7 +2,7 @@
 </html>
 <section class="Footer">
     <div class="footer">
-        <div class="c-1">
+        <div class="c-1 bloc">
             <h1>Shop</h1>
             <div class="links">
                 <a href="#">Kids</a>
@@ -11,7 +11,7 @@
                 <a href="#">Promotions</a>
             </div>
         </div>
-        <div class="c-2">
+        <div class="c-2 bloc">
             <h1>Policies</h1>
             <div class="links">
                 <a href="#">shipping</a>
@@ -19,14 +19,14 @@
                 <a href="#">privacy Policy</a>
             </div>
         </div>
-        <div class="c-3">
+        <div class="c-3 bloc">
             <h1>Contact</h1>
             <div class="links">
                 <a href="#">email@gmail.com</a>
                 <a href="#">+2126 45 78 30 61</a>
             </div>
         </div>
-        <div class="c-4">
+        <div class="c-4 bloc">
             <h1>Follow Us</h1>
             <div class="links">
                 <div class="fb">

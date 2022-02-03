@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;800&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"> 
+
     <link href= "{{ URL::asset('css/style.css'); }} " rel="stylesheet">
     <link href= "{{ URL::asset('css/ProductPage.css'); }} " rel="stylesheet">
+    <link href= "{{ URL::asset('css/categories.css'); }} " rel="stylesheet">
     <link href= "{{ URL::asset('css/about.css'); }} " rel="stylesheet">
     <link href= "{{ URL::asset('css/contact.css'); }} " rel="stylesheet">
     <link href= "{{ URL::asset('css/ShopPage.css'); }} " rel="stylesheet">
@@ -23,16 +28,19 @@
 <body>
     <nav>
        <div class="content">
+            <div class="hamburger-icon">
+                <i class="fas fa-bars fa-2x" id="hamburger-icon" ></i>
+            </div>
             <div class="Col-1">
                 <ul class="nav-grp-links">
                     <li>
-                        <a class = "nav-links" href="{{route('bluelight')}}">Blue Light Glasses</a>
+                        <a class = "nav-links" href="{{route('bluelight')}}" id="nav-link">Blue Light Glasses</a>
                     </li>
                     <li>
-                        <a class = "nav-links"  href="{{route('sunglasses')}}">SunGlasses</a>
+                        <a class = "nav-links"  href="{{route('sunglasses')}}"id="nav-link">SunGlasses</a>
                     </li>
                     <li>
-                        <a class = "nav-links"  href="{{route('kids')}}">Kids</a>
+                        <a class = "nav-links"  href="{{route('kids')}}" id="nav-link">Kids</a>
                     </li>
                 </ul>
             </div>
@@ -44,13 +52,13 @@
             <div class="Col-2">
                 <ul class="nav-grp-links">
                     <li>
-                        <a class = "nav-links"  href="#">Promotions</a>
+                        <a class = "nav-links"  href="#"id="nav-link">Accessories</a>
                     </li>
                     <li>
-                        <a class = "nav-links"  href="{{route('contact')}}">Contact</a>
+                        <a class = "nav-links"  href="{{route('contact')}}" id="nav-link">Contact</a>
                     </li>
                     <li>
-                        <a class = "nav-links"  href="{{route('about')}}">About</a>
+                        <a class = "nav-links"  href="{{route('about')}}" id="nav-link">About</a>
                     </li>
                 </ul>
             </div>
@@ -61,6 +69,17 @@
             </div>
        </div>
     </nav>
+    <div class="hamburger-menu" id="menu">
+        <i class="fas fa-arrow-left" id="close-menu"></i>
+        <ul>
+            <li><a href="{{route('bluelight')}}">Blue Light Glasses</a><div class="LINE"></div></li>
+            <li><a href="{{route('sunglasses')}}">Sunglasses</a><div class="LINE"></div></li>
+            <li><a href="">Kids Glasses</a><div class="LINE"></div></li>
+            <li><a href="">Accessories</a><div class="LINE"></div></li>
+            <li><a href="{{route('about')}}">About</a><div class="LINE"></div></li>
+            <li><a href="{{route('contact')}}">Contact</a><div class="LINE"></div></li>
+        </ul>
+    </div>
    
     <div class="cart" id="cart">
         <i class="fas fa-arrow-right arrow" id="close-cart"></i>

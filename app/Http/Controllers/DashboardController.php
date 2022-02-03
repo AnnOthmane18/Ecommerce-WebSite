@@ -139,14 +139,19 @@ class DashboardController extends Controller
 
     public function listProducts(){
         // $products = DB::table('products')->paginate(7);
-        $products = Product::paginate(7);
+        if(request()->query('products-search')){
+            // ->where('city', 'like', '%'.$city.'%');
+            $products = Product::where('name','LIKE','%'.request()->query('products-search').'%')->paginate(7);
+        }else{
+            $products = Product::paginate(7);
+        }
         return view('Dashboard.listProducts',['products' => $products]);
     }
-    
-    public function search($name){
-        $products = DB::table('products')->where('name', $name)->get();
-        return view('Dashboard.listProducts',['products' => $products]);
-        }
+
+    // public function search($name){
+    //     $products = DB::table('products')->where('name', $name)->get();
+    //     return view('Dashboard.listProducts',['products' => $products]);
+    //     }
 
     public function Delete($id){
         $product = Product::findorfail($id);
