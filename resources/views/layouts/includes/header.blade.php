@@ -15,6 +15,10 @@
     <link href= "{{ URL::asset('css/ShopPage.css'); }} " rel="stylesheet">
     <link href= "{{ URL::asset('css/lightslider.css'); }} " rel="stylesheet">
     <link href= "{{ URL::asset('css/ShoppingCart.css'); }} " rel="stylesheet">
+    <link href= "{{ URL::asset('css/owl.carousel.min.css'); }} " rel="stylesheet">
+    <link href= "{{ URL::asset('css/owl.theme.default.min.css'); }} " rel="stylesheet">
+
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -26,6 +30,7 @@
     <title>Barner Shop</title>
 </head>
 <body>
+    
     <nav>
        <div class="content">
             <div class="hamburger-icon">
@@ -46,13 +51,13 @@
             </div>
             <div class="logo">
                 <a href="{{route('Home')}}">
-                    <img src="{{ URL::asset('imgs/logo.png') }}" alt="">
+                    <img src="{{ asset('imgs/logo.png') }}" alt="">
                 </a>
             </div>
             <div class="Col-2">
                 <ul class="nav-grp-links">
                     <li>
-                        <a class = "nav-links"  href="#"id="nav-link">Accessories</a>
+                        <a class = "nav-links"  href="{{route('accessories')}}" id="nav-link">Accessories</a>
                     </li>
                     <li>
                         <a class = "nav-links"  href="{{route('contact')}}" id="nav-link">Contact</a>
@@ -122,9 +127,20 @@
                 <p>Total :</p>
                 <p style="font-weight:bold;">${{$total}}</p>
             </div>
-            <button class="clearAll">Clear All</button>
-            <button class="Checkout">Checkout</button>
+            <div class="checkout-btns">
+                <a href="{{route('deleteAll')}}">
+                    <button class="clearAll">Clear All</button>
+                </a>
+                <a href="{{route('cart')}}">
+                    <button class="clearAll">Shopping Cart</button>
+                </a>
+                <a href="#">
+                    <button class="Checkout">Proceed Checkout</button>
+                </a>
+            </div>
         </div>
     </div>
         
 <script type="text/javascript" src="{{asset('js/cart.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/jquery-3.6.0.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/owl.carousel.min.js')}}"></script>

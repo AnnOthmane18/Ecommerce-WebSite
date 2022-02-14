@@ -23,8 +23,11 @@ class cartController extends Controller
             $cartItems[$id] = [
                 "image_path"=>$product->image_path,
                 "name"=>$product->name,
+                "id"=>$product->id,
                 "brand"=>$product->brand,
-                "details"=>$product->details,
+                "color"=>$product->color,
+                "material"=>$product->material,
+                "size"=>$product->size,
                 "price"=>$product->price,
                 "quantity"=>1
             ];
@@ -43,5 +46,11 @@ class cartController extends Controller
             }
             return redirect()->back()->with('success','product removed successfully');
         }
+    }
+
+    public function deleteAll(Request $request){
+
+        $request->session()->flush('key'); // deleting all session data
+        return redirect()->back()->with('success','all products removed successfully');
     }
 }

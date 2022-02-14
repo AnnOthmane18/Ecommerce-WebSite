@@ -44,6 +44,7 @@ nav{
     display: none;
 }
 .cart-items-nbr{ 
+    display: none;
     position: absolute;
     background-color: orange;
     font-weight: bold;
@@ -102,16 +103,17 @@ nav{
 li{
     list-style: none;
 }
-
-/* Vertical CART */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/*---------------------- Vertical CART ---------*/
 .cart{
     padding:15px;
     position:fixed;
     background-color: white;
     z-index: 12;
-    width:500px;
+    width:650px;
     height: 100%;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    box-shadow: rgba(60, 64, 67, 0.3) -2px 1px 2px 0px ;
     overflow: scroll;
     top: 0px;
     right: 0px;
@@ -204,31 +206,40 @@ li{
     position:sticky;
     bottom: 0px;
 }
+.checkout-btns{
+    align-items: center;
+    width: 80%;
+    height:150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 5px auto;
+
+}
+.checkout-btns a{
+    width: 80%;
+}
 .clearAll{
-    font-weight: bold;
     font-size: 25px;
     background-color:black;
     color: white;
+    padding:5px auto;
     border: none;
-    padding:5px 0;
     width: 100%;
-    max-width:350px;
     text-align:center;
-    margin: 5px auto;
     cursor: pointer;
 }
 
 .Checkout{
-    font-weight: bold;
+    padding:5px auto;
+
     font-size: 25px;
     background-color:transparent;
     color: black;
     border: black solid 1px;
-    padding:5px 0;
+    /* padding:5px 0; */
     width: 100%;
-    max-width:350px;
-    /* text-align:center; */
-    margin: 5px auto;
+
     cursor: pointer;
 }
 .Checkout:hover{
@@ -400,86 +411,80 @@ li{
     color : black;
 }
 /****************BEST SELLERS************************/
-.best-sellers{
-    margin:50px auto;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
+.carousel-product{
+    /* background-color:red; */
+    display:flex;
+    justify-content:space-around;
+    flex-wrap: wrap;
+    align-items:center;
+    gap: 15px;
 }
 .cards h1{
-    text-align: center;
-    font-weight: bold;
-    margin:  10px auto;
-    font-weight: 60px;
+    text-align:center;
+    margin: 10px auto;
+    font-weight: 600;
 }
-.item-a, .item-b, .item-c, .item-d, .item-e{
-    background-color:white;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
-    height :550px;
-    width : 350px;
-    border-radius:7px;
-    align-items :center;
-    justify-content :flex;
-    flex-direction:column;
-    justify-content: space-around;
-    overflow: hidden;
-}
-.text{
-    text-align: center;
-    margin: 10px 15px;
-}
-.produc-title{
-    font-weight: bold;
-    font-size:20px;
-    letter-spacing: 2px;
-}
-.buttons{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height :25%;
-    padding: 9px 45px;
-    margin-bottom:50px;
-}
-.card button{
-    border-radius:3px;
-    cursor: pointer;
-    padding: 10px 10px;
-    font-size: 20px;
-}
-.buy-now{
-    border:black solid 1.5px;
-    color: black;
-    background-color:white;
-}
-.add-cart{
-    border:none;
+.line-carousel{
+    width: 300px;
+    height:2px;
     background-color:black;
-    color: white;
+    margin:  15px auto;
 }
-.add-cart:hover{
-    border:black solid 1.5px;
-    transform:scale(1px);
-    color: black;
-    background-color:white;
+.carousel-product-content{
+    width: 340px;
+    border:none;
+    border-radius:10px;
+    height:550px;
+    margin-top:25px;
+    text-align: center;
 }
-.card img{
-    transform:translate(0%,-5%);
-    object-fit:cover;
-    box-sizing: border-box;
+.carousel-product-content a h3{
+    text-decoration: none;
+}
+.carousel-product-content:hover {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    scale: 1.1;
+    transition: all 0.2s;
+}
+.carousel-product-content img{
     width: 100%;
 }
-.cS-hidden {
-    height: 1px;
-    opacity: 0;
-    filter: alpha(opacity=0);
-    overflow: hidden;
+.carousel-product-buttons{
+    padding:5px 20px;    
+    height:100px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    /* display:none; */
+}
+.carousel-product-buttons button{
+    padding:8px 20px;
+    font-weight: bold;
+}
+.carousel-addToCart{
+    background-color: black;
+    color:white;
+    width:100%;
+
+    border-radius:3px;
+    border: none;
+    cursor: pointer;
+}
+.carousel-addToCart:hover{
+    background-color:transparent;
+    border: black solid 1px;
+    color: black;
 }
 
+.carousel-BuyNow{
+    background-color:transparent;
+    border: black solid 1px;
+    color: black;
+    border-radius:3px;
+    cursor: pointer;
+}
 
-
-
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 770px) {
     .categories-grid{
         display: grid;
         /* background-color:blue; */

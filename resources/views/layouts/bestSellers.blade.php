@@ -1,84 +1,59 @@
-
 <div class="cards">
     <h1>Best Sellers</h1>
-    <ul id="autoWidth" class="cs-hidden best-sellers">
-      <li class="item-a">
-        <div class="card">
-                <div class="image">
-                    <img src="{{ URL::asset('elements/black.webp') }}" alt="">
+    <div class="line-carousel"></div>
+    <div class="carousel-cards">
+        <div class="carousel-product owl-carousel owl-theme featured-carousel">   
+            @foreach ($products as $product)
+                <div class="carousel-product-content item ">
+                    <a href="/shop/{{$product->id}}">
+                            <img src="{{ asset($product->image_path) }}" alt="">
+                            <h3 id="product-name">{{$product->name }}</h3>
+                    </a>
+                    <p>${{$product->price}}</p>
+                    <div class="carousel-product-buttons">
+                        <a href="{{route('add.to.cart',$product->id)}}">
+                            <button class="carousel-addToCart">ADD TO CART</button>
+                        </a>
+                        <a href="{{route('customer-info')}}">
+                            <button class="shop-BuyNow">BUY NOW</button>
+                        </a>
+                    </div>
                 </div>
-                <div class="text">
-                    <p class="produc-title">Black Glasses</p>
-                    <p>$50</p>
-                </div>
-                <div class="buttons">
-                    <button class="add-cart">ADD TO CART</button>
-                    <button class="buy-now">BUY NOW</button>
-                </div>
-            </div>
-      </li>
-      <li class="item-b">
-        <div class="card">
-                <div class="image">
-                    <img src="{{ URL::asset('elements/black.webp') }}" alt="">
-                </div>
-                <div class="text">
-                    <p class="produc-title">Black Glasses</p>
-                    <p>$50</p>
-                </div>
-                <div class="buttons">
-                    <button class="add-cart">ADD TO CART</button>
-                    <button class="buy-now">BUY NOW</button>
-                </div>
-            </div>
-      </li>
-      <li class="item-c">
-        <div class="card">
-                <div class="image">
-                    <img src="{{ URL::asset('elements/brwn.webp') }}" alt="">
-                </div>
-                <div class="text">
-                    <p class="produc-title">Black Glasses</p>
-                    <p>$50</p>
-                </div>
-                <div class="buttons">
-                    <button class="add-cart">ADD TO CART</button>
-                    <button class="buy-now">BUY NOW</button>
-                </div>
-            </div>
-      </li>
-      <li class="item-d">
-        <div class="card">
-                <div class="image">
-                    <img src="{{ URL::asset('elements/blue.webp') }}" alt="">
-                </div>
-                <div class="text">
-                    <p class="produc-title">Black Glasses</p>
-                    <p>$50</p>
-                </div>
-                <div class="buttons">
-                    <button class="add-cart">ADD TO CART</button>
-                    <button class="buy-now">BUY NOW</button>
-                </div>
-            </div>
-      </li>
-      <li class="item-e">
-        <div class="card">
-                <div class="image">
-                    <img src="{{ URL::asset('elements/colors.webp') }}" alt="">
-                </div>
-                <div class="text">
-                    <p class="produc-title">Black Glasses</p>
-                    <p>$50</p>
-                </div>
-                <div class="buttons">
-                    <button class="add-cart">ADD TO CART</button>
-                    <button class="buy-now">BUY NOW</button>
-                </div>
-            </div>
-      </li>
-    </ul>
-
+            @endforeach
+        </div>
+    </div>
 </div>
 
-<script type="text/javascript" src="{{ URL::asset('js/lightslider_fct.css'); }}"></script>
+<script>
+    $('.featured-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:2
+        },
+        700:{
+            items:2
+        },
+        800:{
+            items:2
+        },
+        900:{
+            items:3
+        },
+        1024:{
+            items:3
+        },
+        1440:{
+            items:4
+        },
+        2560:{
+            items:5
+        }
+    }
+})
+</script>

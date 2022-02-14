@@ -13,8 +13,6 @@ class DashboardController extends Controller
         $this->middleware('auth');
     }
 
- 
-
     public function dashboard(){
         $nbr_Products = DB::table('products')->count();        
         return view('Dashboard.dashboard',[
@@ -35,6 +33,7 @@ class DashboardController extends Controller
             'salesPrice' =>'required'
         ]);
 
+    
         $product = new Product;
         $product->name = $req->productName;
         $product->description = $req->description;
@@ -90,6 +89,27 @@ class DashboardController extends Controller
             $product->product_image = 'image not found';
         }
 
+        if($req->hasFile('sideImage')){
+            $file = $req->file('sideImage');
+            $extension = $file->getClientOriginalExtension();
+            $filename = $req->productName.'.'.$extension;
+            if($req->category == 'Bluelight'){
+                $file->move('imgs/BlueLight/',$filename);
+                $product->product_image = 'imgs/BlueLight/'.$filename;
+            }else if($req->category == 'Eyewear'){
+                $file->move('imgs/Eyewear/',$filename);
+                $product->product_image = 'imgs/Eyewear/'.$filename;
+            }else if($req->category == 'SunGlasses'){
+                $file->move('imgs/SunGlasses/',$filename);
+                $product->product_image = 'imgs/SunGlasses/'.$filename;
+            }else if($req->category == 'Accessories'){
+                $file->move('imgs/Accessories/',$filename);
+                $product->product_image = 'imgs/Accessories/'.$filename;
+            }
+        }else{
+            $product->product_image = 'image not found';
+        }
+
         // if($req->hasFile('sideImage')){
         //     $file = $req->file('sideImage');
         //     $extension = $file->getClientOriginalExtension();
@@ -101,6 +121,26 @@ class DashboardController extends Controller
         // }
         if($req->hasFile('manImage')){
             $file = $req->file('manImage');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extension;
+            if($req->category == 'Bluelight'){
+                $file->move('imgs/BlueLight/',$filename);
+                $product->man_image = 'imgs/BlueLight/'.$filename;
+            }else if($req->category == 'Eyewear'){
+                $file->move('imgs/Eyewear/',$filename);
+                $product->man_image = 'imgs/Eyewear/'.$filename;
+            }else if($req->category == 'SunGlasses'){
+                $file->move('imgs/SunGlasses/',$filename);
+                $product->man_image = 'imgs/SunGlasses/'.$filename;
+            }else if($req->category == 'Accessories'){
+                $file->move('imgs/Accessories/',$filename);
+                $product->man_image = 'imgs/Accessories/'.$filename;
+            }
+        }else{
+            $product->man_image = 'image not found';
+        }
+        if($req->hasFile('womanImage')){
+            $file = $req->file('womanImage');
             $extension = $file->getClientOriginalExtension();
             $filename = time().'.'.$extension;
             if($req->category == 'Bluelight'){

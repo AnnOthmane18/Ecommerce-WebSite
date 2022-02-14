@@ -8,10 +8,21 @@
 
 <div class="filter">
     <div class="filter-btns">
-        <button id="blue-btn" class="btn btn-outline-dark filter-btn">Blue</button>
-        <button id="red-btn" class="btn btn-outline-dark filter-btn">Red</button>
-        <button id="black-btn" class="btn btn-outline-dark filter-btn">Black</button>
-        <button id="others" class="btn btn-outline-dark filter-btn">others</button>
+        <a href="{{route('blue_bluelight')}}"> 
+            <button id="blue-btn" class="btn btn-outline-dark filter-btn">Blue</button>
+        </a>
+        <a href="{{route('black_bluelight')}}"> 
+            <button id="black-btn" class="btn btn-outline-dark filter-btn">Black</button>
+        </a>
+        <a href="{{route('red_bluelight')}}"> 
+            <button id="red-btn" class="btn btn-outline-dark filter-btn">Red</button>
+        </a>
+        <a href="{{route('yellow_bluelight')}}"> 
+            <button id="yellow-btn" class="btn btn-outline-dark filter-btn">Yellow</button>
+        </a>
+        <a href="{{route('others_bluelight')}}"> 
+            <button id="others-btn" class="btn btn-outline-dark filter-btn">Others</button>
+        </a>
     </div>
 </div>
 
@@ -28,143 +39,18 @@
             <a href="{{route('add.to.cart',$product->id)}}">
                 <button class="shop-addToCart">ADD TO CART</button>
             </a>
-            <button class="shop-BuyNow">BUY NOW</button>
+            <a href="{{route('customer-info')}}">
+                <button class="shop-BuyNow">BUY NOW</button>
+            </a>
         </div>
     </div>
    @endforeach
 
    <script type="text/javascript" src="{{asset('js/filter.js')}}"></script>
 
-    <!-- <div class="shop-product-1">
-        <a href="product">
-            <img src="{{URL::asset('imgs/blue/blue_main.webp')}}" alt="">
-       
-            <h3>Blue Glasses</h3> 
-        </a>
-        <p>$49</p>
-        <div class="shop-product-buttons">
-            <button class="shop-addToCart">ADD TO CART</button>
-            <button class="shop-BuyNow">BUY NOW</button>
-        </div>
-    </div>
-
-    <div class="shop-product-1">
-        <a href="product">
-            <img src="{{URL::asset('imgs/Darkblue/dark_blue_main.webp')}}" alt="">
-            <h3>DarkBlue Glasses</h3>
-        </a>
-        <p>$59</p>
-        <div class="shop-product-buttons">
-            <button class="shop-addToCart">ADD TO CART</button>
-            <button class="shop-BuyNow">BUY NOW</button>
-        </div>
-    </div>
-
-    <div class="shop-product-1">
-        <a href="product">
-            <img src="{{URL::asset('imgs/Darkgreen/dark_green_main.webp')}}" alt="">
-            <h3>DarkGreen Glasses</h3>
-        </a>
-        <p>$59</p>
-        <div class="shop-product-buttons">
-            <button class="shop-addToCart">ADD TO CART</button>
-            <button class="shop-BuyNow">BUY NOW</button>
-        </div>
-    </div>
-
-    <div class="shop-product-1">
-        <a href="product">
-            <img src="{{URL::asset('imgs/Darkgreen/dark_green_main.webp')}}" alt="">
-            <h3>DarkGreen Glasses</h3>
-        </a>
-        <p>$59</p>
-        <div class="shop-product-buttons">
-            <button class="shop-addToCart">ADD TO CART</button>
-            <button class="shop-BuyNow">BUY NOW</button>
-        </div>
-    </div>
-
-    <div class="shop-product-1">
-        <a href="product">
-            <img src="{{URL::asset('imgs/Darkgreen/dark_green_main.webp')}}" alt="">
-            <h3>DarkGreen Glasses</h3>
-        </a>
-        <p>$59</p>
-        <div class="shop-product-buttons">
-            <button class="shop-addToCart">ADD TO CART</button>
-            <button class="shop-BuyNow">BUY NOW</button>
-        </div>
-    </div>
-
-    <div class="shop-product-1">
-        <a href="product">
-            <img src="{{URL::asset('imgs/Darkgreen/dark_green_main.webp')}}" alt="">
-            <h3>DarkGreen Glasses</h3>
-        </a>
-        <p>$59</p>
-        <div class="shop-product-buttons">
-            <button class="shop-addToCart">ADD TO CART</button>
-            <button class="shop-BuyNow">BUY NOW</button>
-        </div>
-    </div>
-
-    <div class="shop-product-1">
-        <a href="product">
-            <img src="{{URL::asset('imgs/Darkgreen/dark_green_main.webp')}}" alt="">
-            <h3>DarkGreen Glasses</h3>
-        </a>
-        <p>$59</p>
-        <div class="shop-product-buttons">
-            <button class="shop-addToCart">ADD TO CART</button>
-            <button class="shop-BuyNow">BUY NOW</button>
-        </div>
-    </div>
-
-    <div class="shop-product-1">
-        <a href="product">
-            <img src="{{URL::asset('imgs/Darkgreen/dark_green_main.webp')}}" alt="">
-            <h3>DarkGreen Glasses</h3>
-        </a>
-        <p>$59</p>
-        <div class="shop-product-buttons">
-            <button class="shop-addToCart">ADD TO CART</button>
-            <button class="shop-BuyNow">BUY NOW</button>
-        </div>
-    </div>
-
-    <div class="shop-product-1">
-        <a href="product">
-            <img src="{{URL::asset('imgs/Darkgreen/dark_green_main.webp')}}" alt="">
-            <h3>DarkGreen Glasses</h3>
-        </a>
-        <p>$59</p>
-        <div class="shop-product-buttons">
-            <button class="shop-addToCart">ADD TO CART</button>
-            <button class="shop-BuyNow">BUY NOW</button>
-        </div>
-    </div>
-
-    <div class="shop-product-1">
-        <a href="product">
-            <img src="{{URL::asset('imgs/Darkgreen/dark_green_main.webp')}}" alt="">
-            <h3>DarkGreen Glasses</h3>
-        </a>
-        <p>$59</p>
-        <div class="shop-product-buttons">
-            <button class="shop-addToCart">ADD TO CART</button>
-            <button class="shop-BuyNow">BUY NOW</button>
-        </div>
-    </div>
-
-    <div class="shop-product-1">
-        <a href="product">
-            <img src="{{URL::asset('imgs/Darkgreen/dark_green_main.webp')}}" alt="">
-            <h3>DarkGreen Glasses</h3>
-        </a>
-        <p>$59</p>
-        <div class="shop-product-buttons">
-            <button class="shop-addToCart">ADD TO CART</button>
-            <button class="shop-BuyNow">BUY NOW</button>
-        </div>
-    </div> -->
+  
 </div>
+<br>
+<br>
+<br>
+@include('layouts.includes.footer')

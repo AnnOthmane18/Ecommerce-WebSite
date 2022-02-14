@@ -16,8 +16,8 @@
                     <label for="">Color</label>
                     <select name="color" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
                         {{-- <option selected>Color</option> --}}
-                        <option value="Blue">Blue</option>
-                        <option value="Red">Red</option>
+                        <option value="blue">Blue</option>
+                        <option value="red">Red</option>
                         <option value="yellow">yellow</option>
                         <option value="green">green</option>
                         <option value="black">black</option>
@@ -73,10 +73,10 @@
                     <label for="">Category</label>
                     <select name="category" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
                         {{-- <option selected>Category</option> --}}
-                        <option value="Eyewear">Eyewear Glasses</option>
                         <option value="Bluelight">Bluelight Glasses</option>
                         <option value="SunGlasses">SunGlasses</option>
                         <option value="Accessories">Accessories</option>
+                        <option value="Kids">Kids</option>
                     </select>
                 </div>    
                 <div class="quantity ">

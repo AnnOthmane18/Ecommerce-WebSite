@@ -159,3 +159,7 @@
             <button class="shop-BuyNow">BUY NOW</button>
         </div>
     </div> -->
+<br>
+<br>
+<br>
+    @include('layouts.includes.footer')

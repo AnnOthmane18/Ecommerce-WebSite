@@ -1,6 +1,8 @@
 
 <div class="categories">
     <h1>Categories</h1>
+    <div class="line-carousel"></div>
+
     <div class="categories-grid">
         <div class="category">
             <img src="{{asset('imgs/sunglasses_category.jpg')}}" alt="">

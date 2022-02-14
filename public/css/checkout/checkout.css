@@ -1,0 +1,54 @@
+
+
+.summary{
+    background-color: #fafafa;
+    width: 50%;
+    right: 0px;
+    height:100vh;
+    position: absolute;
+    border: 1px solid lightgray;
+    box-shadow: rgba(0, 0, 0, 0.15) -1.95px 1.95px 2.6px;
+}
+.summary-content{
+    /* background-color: yellow; */
+    width: 75%;
+    height: 50vh;
+    margin: 50px auto;
+    padding:10px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.summary-content h2{
+    text-align: center;
+    font-weight: 700;
+}
+.summary-products{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.summary-line{
+    width: 80%;
+    background-color:lightgray;
+    height: 1px;
+    margin: 0 auto;
+}
+.summary-col1 {
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;
+    gap: 10px;
+    /* background-color:red; */
+    width: 40%;
+}
+.summary-col1 img{
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    width: 100px;
+}
+.Sub-total,.Shipping,.summary-total{
+    display: flex;
+    justify-content: space-between;
+}
+

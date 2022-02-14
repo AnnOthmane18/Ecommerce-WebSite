@@ -23,16 +23,16 @@
         </thead>
         @if(session('cartItems'))
             @foreach(session('cartItems') as $key=>$value)
-            <tbody>
-            <tr class="name">
+        <tbody>
+            <tr >
                 <td class="product-name">
-                    <a href=""><img src="{{URL :: asset($value['image_path'])}}" alt=""></a>
+                    <a href="/shop/{{$value['id']}}"><img src="{{URL :: asset($value['image_path'])}}" alt=""></a>
                     <div class="product-detail">
-                        <a href=""><h3>{{$value['name']}}</h3></a>
+                        <a href="/shop/{{$value['id']}}"><h3>{{$value['name']}}</h3></a>
                         <p>barner glasses</p>
                     </div>
                 </td>
-                <td>{{$value['details']}}</td>
+                <td>{{$value['color']}} - {{$value['size']}} - {{$value['material']}}</td>
                 <td>${{$value['price']}}</td>
                 <td>
                     <input type="number" min="1" value="{{$value['quantity']}}">
@@ -50,6 +50,9 @@
             <p style="color:red;">Shopping Cart Is Empyty!!</p>
         @endif
     </table>
+    <a href="#">
+        <button>Proceed to checkout</button>
+    </a>
 </div> 
 
 <!-- <div class="cart-products">
@@ -87,3 +90,5 @@
         </div>
     </div>
 </div> -->
+<br>
+@include('layouts.includes.footer')

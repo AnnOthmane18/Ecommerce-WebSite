@@ -6,13 +6,13 @@
         <div class="column-1">
             <div class="images">
                 <div class="main-image">
-                    <img src="{{ asset($product->image_path) }}" alt="">
+                    <img id="main-image" src="{{ asset($product->image_path) }}" alt="">
                 </div>
                 <div class="sec-images">
-                    <img src="{{ asset($product->product_image) }}" alt="">
-                    <img src="{{ asset($product->side_image) }}" alt="">
-                    <img src="{{ asset($product->man_image) }}" alt="">
-                    <img src="{{ asset($product->women_image) }}" alt="">
+                    <img class="thumbnail" src="{{ asset($product->product_image) }}" alt="">
+                    <img class="thumbnail" src="{{ asset($product->side_image) }}" alt="">
+                    <img class="thumbnail" src="{{ asset($product->man_image) }}" alt="">
+                    <img class="thumbnail" src="{{ asset($product->women_image) }}" alt="">
                 </div>
             </div>
         </div>
@@ -37,10 +37,11 @@
             </div>
             <div class="Size">
                 <p>size:</p>
-                <button>small</button>
-                <button>medium</button>
-                <button>large</button>
-                <button>x-large</button>
+                <select class="form-select form-select-sm mb-3" aria-label=".form-select-lg example">
+                    <option value="1">small</option>
+                    <option value="2">medium</option>
+                    <option value="3">large</option>
+                </select>
             </div>
             <div class="type">
                 <p>type:</p>
@@ -48,8 +49,12 @@
                 <button>Plastic</button>
             </div>
             <div class="btns">
-                <a href="{{route('add.to.cart',$product->id)}}"><button class="AddToCart" >ADD TO CART</button></a>
-                <button class="BuyNow">BUY NOW</button>
+                <a href="{{route('add.to.cart',$product->id)}}">
+                    <button class="AddToCart" >ADD TO CART</button>
+                </a>
+                <a href="{{route('customer-info')}}">
+                    <button class="shop-BuyNow">BUY NOW</button>
+                </a>
             </div>
             <div class="desc">
                 <p>{{$product->description }}</p>
@@ -128,7 +133,24 @@
     </div>
 </section>
 
+{{-- <script type="text/javascript">
+    var mainImage = document.getElementById('mainImage');
+    var ActiveImage = document.getElementsByClassName('activeImage'); 
+    var secImages = document.getElementsByClassName('thumbnail');
+    // console.log(secImages)
+    var temp = false;
+    for(var i=0; i<secImages.length; i++){
+    //    console.log(secImages[i].status);
+        // if(secImages[i].src == 'http://localhost:8000/image not found'){
+        //     secImages[i].addClassList('hideImage')
+        // }
+        console.log(secImages[i])
+        // secImages[i].addEventListener('mouseover',()=>{
+        //     console.log( secImages[i].src);
+        // })
+    }
 
+</script> --}}
 <br>
 
  @include('layouts.includes.footer') 

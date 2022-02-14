@@ -1,7 +1,7 @@
 @include('layouts.includes.header')
 
 <div class="blue-light-header">
-    <h1>Sun Glasses</h1>
+    <h1>Glasses Accesories</h1>
     <p>Having fun has never been safer. Discover super light and flexible blue
          light glasses in different colors and shapes, all specially designed for children.</p>
 </div>
@@ -35,7 +35,6 @@
     </div>
    @endforeach
 
-   <script type="text/javascript" src="{{asset('js/filter.js')}}"></script>
 
     
 </div>

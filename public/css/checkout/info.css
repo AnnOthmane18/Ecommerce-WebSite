@@ -1,0 +1,44 @@
+
+.customer-info{
+    width: 50%;
+    height: 100vh;
+    text-align:center;
+}
+
+.customer-info img{
+    width: 220px;
+    margin: 50px auto;
+}
+.checkout-path{
+    margin: 0 auto;
+    width: 300px;
+}
+.checkout-path a{
+    text-decoration:none;
+    color: gray;
+}
+.customer-info-form{
+    text-align:left;
+    width: 60%;
+    height: 60%;
+    margin: 50px auto;
+  
+}
+.customer-info-form h2{
+    text-align:center;
+}
+.customer-info-form form{
+    justify-content:center;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    height:80%;
+
+}
+.customer-name{
+    display: flex;
+    justify-content: space-between;
+}
+label{
+    color: darkgray;
+}
